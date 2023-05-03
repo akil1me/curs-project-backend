@@ -14,9 +14,7 @@ const PORT = process.env.PORT || 3002;
 
 const startServer = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://akipax123:akipax123@reviews.pnptji0.mongodb.net/reviews?retryWrites=true&w=majority"
-    );
+    await mongoose.connect(process.env.DB_URL);
     app.listen(PORT, () => {
       console.log(`Server listening at http://localhost:${PORT}`);
     });
